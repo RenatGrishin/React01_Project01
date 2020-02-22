@@ -1,0 +1,5 @@
+.header{
+    grid-area: header;
+    background-color: #202020;
+    color: #fff;
+}
