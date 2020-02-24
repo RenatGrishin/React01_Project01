@@ -1,0 +1,19 @@
+.UserDiv {
+    border: 1px solid #202020;
+    height: 150px;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+}
+.avaAndFriend{
+    width: 100px;
+    float: left;
+}
+.infoDiv{
+    margin-left: 110px;
+}
+
+.sellectSpanNav{
+    font-weight: bold;
+}
