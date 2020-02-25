@@ -53,12 +53,12 @@ const UsersReducer = (state=initialState, action) =>{
         case TOTAL_USER_COUNT:
             return{
                 ...state,
-                users: action.tUC
+                totalUserCount: action.tUC
             }
         case CURRENT_PAGE:
             return{
                 ...state,
-                users: action.currentPage
+                currentPage: action.currentPage
             }
         default: return state;
     }

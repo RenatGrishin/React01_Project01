@@ -6,8 +6,17 @@ import css from './User/User.module.css'
 class Users extends React.Component{
 
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.users.currentPage}&count=${this.props.users.pageSize}`).then(response => {
             this.props.setUsers(response.data.items)
+            this.props.totalUserCount(response.data.totalCount)
+        })
+    }
+
+    setPage(page){
+        this.props.currentPage(page)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page}&count=${this.props.users.pageSize}`).then(response => {
+            this.props.setUsers(response.data.items)
+            this.props.totalUserCount(response.data.totalCount)
         })
     }
 
@@ -17,11 +26,11 @@ class Users extends React.Component{
             for(let i = 1; i <= totalPages; i++ ){
                 pagesArr.push(i);
             }
-debugger
         return <div>
             <div>
                 {pagesArr.map(pA =>{
-                        return <span className={this.props.currentPage ===pA && css.sellectSpanNav}>{pA}</span>
+                        return <span className={this.props.users.currentPage === pA && css.sellectSpanNav}
+                        onClick={()=>{this.setPage(pA)}}>{pA}<span> </span></span>
                     })}
 
             </div>
