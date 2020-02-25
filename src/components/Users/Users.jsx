@@ -1,7 +1,7 @@
 import React from "react";
-import User from './User/User'
+import User from './User/User';
 import * as axios from "axios";
-import css from './User/User.module.css'
+import css from './User/User.module.css';
 
 class Users extends React.Component{
 
