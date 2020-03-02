@@ -1,10 +1,12 @@
 import React from "react";
 
-const Portfolio =(props)=>{
+const Profile =(props)=>{
+    debugger
     return(
         <div>
+            {props.user.id}
             My Portfolio Page
         </div>
     );
 };
-export default Portfolio;
+export default Profile;
